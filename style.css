@@ -285,29 +285,51 @@ footer { padding: 60px 0; text-align: center; font-size: 0.75rem; border-top: 1p
         top: 0;
         right: 0;
         height: 100vh;
-        width: 65%; /* Reduced from 75% */
-        background-color: var(--nav-bg-rgba); /* Use transparent bg from root */
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        width: 55%; /* Reduced for more compact mobile tab */
+        background-color: var(--nav-bg-rgba);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start; /* Aligned left for cleaner look */
-        padding-left: 50px;
-        gap: 30px; /* More compact gap */
+        align-items: flex-start;
+        padding-left: 40px;
+        gap: 0; /* Use padding on links for touch areas */
         transform: translateX(100%);
         transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 1000;
         border-left: 1px solid var(--border-color);
-        box-shadow: -15px 0 30px rgba(0,0,0,0.03);
+        box-shadow: -20px 0 50px rgba(0,0,0,0.05);
     }
+    
+    .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid rgba(0,0,0,0.03); /* Subtle dividers */
+        list-style: none;
+        margin: 0 !important;
+    }
+    
+    [data-theme="dark"] .nav-links li {
+        border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+
     .nav-links a {
-        font-size: 1rem; /* Slightly smaller for mobile */
+        font-family: 'Anuphan', sans-serif !important; /* Force modern font */
+        font-size: 0.9rem; /* Perfectly scaled for mobile */
         text-decoration: none;
         color: var(--text-color);
-        font-weight: 600;
-        letter-spacing: 3px;
+        font-weight: 500;
+        letter-spacing: 2px;
         text-transform: uppercase;
+        display: block;
+        padding: 20px 0; /* Comfortable touch area */
+        transition: 0.3s;
     }
+    
+    .nav-links a:hover {
+        padding-left: 10px;
+        color: var(--secondary-text);
+    }
+
     .nav-active { transform: translateX(0%) !important; }
 }
