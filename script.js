@@ -63,12 +63,20 @@ document.querySelectorAll('a, button, .project-card, .client-logo').forEach(el =
 // Language Switcher Logic
 const langBtns = document.querySelectorAll('.lang-btn');
 const translatableElements = document.querySelectorAll('.lang');
+const translatablePlaceholders = document.querySelectorAll('.lang-placeholder');
 
 const setLanguage = (lang) => {
     translatableElements.forEach(el => {
         const text = el.getAttribute(`data-${lang}`);
         if (text) {
             el.innerHTML = text;
+        }
+    });
+
+    translatablePlaceholders.forEach(el => {
+        const placeholder = el.getAttribute(`data-${lang}`);
+        if (placeholder) {
+            el.setAttribute('placeholder', placeholder);
         }
     });
     
