@@ -199,14 +199,16 @@ input:checked + .slider:before { transform: translateX(16px); }
     height: auto;
     display: block;
     background: transparent !important;
-    mix-blend-mode: multiply; /* Helps blend if there's a faint white fringe, but best for white bg removal */
+    border: none !important;
+    /* Light Mode: Remove white background */
+    mix-blend-mode: multiply; 
     transition: var(--transition-smooth);
 }
 
-/* For Dark Mode, we don't want multiply on a white logo, so reset it */
+/* Dark Mode Fix: Invert and remove the resulting black background */
 [data-theme="dark"] #hero-branding-logo {
     filter: invert(1);
-    mix-blend-mode: normal;
+    mix-blend-mode: screen; 
 }
 
 .hero-content h1 {
