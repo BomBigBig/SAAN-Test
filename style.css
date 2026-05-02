@@ -79,13 +79,16 @@ nav {
     transition: var(--transition-smooth);
 }
 
+/* Logo Theme Handling */
+.logo .logo-dark, .concept-logo-container .logo-dark { display: none; }
+[data-theme="dark"] .logo .logo-light, [data-theme="dark"] .concept-logo-container .logo-light { display: none; }
+[data-theme="dark"] .logo .logo-dark, [data-theme="dark"] .concept-logo-container .logo-dark { display: block; }
+
 .logo img {
     height: 40px;
     width: auto;
     transition: var(--transition-smooth);
 }
-
-[data-theme="dark"] .logo img { filter: invert(1); }
 
 .nav-links { display: none; }
 
@@ -191,25 +194,11 @@ input:checked + .slider:before { transform: translateX(16px); }
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
-    background: transparent !important; /* Ensure no background */
 }
 
-#hero-branding-logo {
+.concept-logo {
     max-width: 200px;
     height: auto;
-    display: block;
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    outline: none !important;
-    filter: none; /* Reset all filters */
-    transition: var(--transition-smooth);
-}
-
-/* Specific fix for Dark Mode: Only invert color, no other effects */
-[data-theme="dark"] #hero-branding-logo {
-    filter: invert(1);
-    mix-blend-mode: normal;
 }
 
 .hero-content h1 {
