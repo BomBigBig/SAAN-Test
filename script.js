@@ -1,5 +1,23 @@
+// Hero Slideshow Logic
+const initHeroSlideshow = () => {
+    const slides = document.querySelectorAll('.hero-slideshow .slide');
+    if (slides.length === 0) return;
+
+    let currentSlide = 0;
+    const slideInterval = 5000; // 5 seconds
+
+    const nextSlide = () => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    };
+
+    setInterval(nextSlide, slideInterval);
+};
+
 // Page Transition Logic
 document.addEventListener('DOMContentLoaded', () => {
+    initHeroSlideshow();
     const overlay = document.querySelector('.page-transition-overlay');
     
     // Links to trigger fade out (internal project links or back buttons)
