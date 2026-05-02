@@ -3,34 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Win's House Interior | SAAN Architect</title>
+    <title>Dr. Win's House Interior | SAAN Studio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Anuphan:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        .project-detail-hero { height: 60vh; background: url('images/project-03.png') center/cover no-repeat; display: flex; align-items: flex-end; padding-bottom: 50px; }
-        .project-header { background: rgba(0,0,0,0.7); color: white; padding: 20px 40px; }
-        .project-content { padding: 80px 0; }
-        .project-info-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; margin-bottom: 50px; }
-        .project-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .project-gallery img { width: 100%; height: 400px; object-fit: cover; }
-        .back-btn { display: inline-block; margin-top: 30px; text-decoration: none; color: var(--text-color); font-weight: 700; }
+        .project-detail-hero { height: 70vh; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/project-03.png') center/cover no-repeat; display: flex; align-items: flex-end; padding-bottom: 50px; }
+        .project-header { background: rgba(0,0,0,0.8); color: white; padding: 30px 50px; border-left: 5px solid white; }
+        .project-content { padding: 100px 0; }
+        .project-info-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 80px; }
+        .project-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+        .project-gallery img { width: 100%; height: 400px; object-fit: cover; filter: grayscale(100%); transition: 0.5s; border: 1px solid var(--border-color); }
+        .project-gallery img:hover { filter: grayscale(0%); transform: scale(1.02); }
+        .room-details { margin-top: 100px; }
+        .room-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; margin-top: 50px; }
+        .room-card h3 { font-size: 1.5rem; margin-bottom: 15px; letter-spacing: 2px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+        .back-btn { display: inline-block; margin-top: 50px; text-decoration: none; color: var(--text-color); font-weight: 700; border: 1px solid var(--text-color); padding: 10px 30px; transition: 0.3s; }
+        .back-btn:hover { background: var(--text-color); color: var(--bg-color); }
+        
+        @media (min-width: 992px) {
+            .project-info-grid { grid-template-columns: 1fr 2fr; gap: 80px; }
+        }
     </style>
 </head>
-<body>
+<body class="fade-in-body">
+    <div class="page-transition-overlay"></div>
     <nav>
-        <div class="logo"><a href="index.html"><img src="images/logo.png" alt="SAAN ARCHITECT" style="height:30px;"></a></div>
+        <div class="logo"><a href="index.html"><img src="images/logo.png" alt="SAAN STUDIO" style="height:30px;"></a></div>
         <ul class="nav-links">
-            <li><a href="index.html#projects">Back to Projects</a></li>
+            <li><a href="index.html#projects" class="lang" data-th="กลับไปที่ผลงาน" data-en="Back to Projects">Back to Projects</a></li>
         </ul>
+        <div class="nav-extra">
+            <div class="lang-switch">
+                <span id="btn-th" class="lang-btn">TH</span> | <span id="btn-en" class="lang-btn active">EN</span>
+            </div>
+        </div>
     </nav>
 
     <section class="project-detail-hero">
         <div class="container">
             <div class="project-header">
-                <h1>DR. WIN'S HOUSE INTERIOR</h1>
-                <p>Warmth & Serenity</p>
+                <h1 class="lang" data-th="INTERIOR บ้านหมอวิน" data-en="DR. WIN'S HOUSE INTERIOR">DR. WIN'S HOUSE INTERIOR</h1>
+                <p class="lang" data-th="ความสงบและอบอุ่นในการพักผ่อน" data-en="Warmth & Serenity">Warmth & Serenity</p>
             </div>
         </div>
     </section>
@@ -40,27 +55,44 @@
             <div class="project-info-grid">
                 <div class="project-meta">
                     <p><strong>CLIENT:</strong> Dr. Win</p>
-                    <p><strong>LOCATION:</strong> Private Residence</p>
+                    <p><strong>LOCATION:</strong> Sisaket</p>
                     <p><strong>YEAR:</strong> 2025</p>
                     <p><strong>TYPE:</strong> Interior Design</p>
                 </div>
                 <div class="project-description">
-                    <h2 style="margin-bottom: 20px;">DESIGN CONCEPT</h2>
-                    <p>การออกแบบภายในที่เน้นความสงบและอบอุ่น (Cozy & Calm) ใช้โทนสีสว่างและไม้ธรรมชาติเป็นหลัก เพื่อสร้างสภาวะแวดล้อมที่ผ่อนคลายสำหรับการพักผ่อนหลังจากการทำงานที่เหนื่อยล้า</p>
+                    <h2 class="lang" data-th="แนวคิดการออกแบบ" data-en="DESIGN CONCEPT" style="margin-bottom: 20px; letter-spacing: 3px;">DESIGN CONCEPT</h2>
+                    <p class="lang" data-th="การออกแบบภายในที่เน้นความสงบและอบอุ่น (Cozy & Calm) ใช้โทนสีสว่างและไม้ธรรมชาติเป็นหลัก เพื่อสร้างสภาวะแวดล้อมที่ผ่อนคลายสำหรับการพักผ่อนหลังจากการทำงานที่เหนื่อยล้า ทุกรายละเอียดถูกสานเข้าด้วยกันเพื่อให้บ้านหลังนี้เป็นที่ชาร์จพลังงานบวกให้กับผู้อยู่อาศัย" data-en="An interior design focused on 'Cozy & Calm'. Using light tones and natural wood as primary elements to create a relaxing environment for rest after a long day. Every detail is woven together to make this house a source of positive energy for its residents.">An interior design focused on 'Cozy & Calm'. Using light tones and natural wood as primary elements to create a relaxing environment for rest after a long day. Every detail is woven together to make this house a source of positive energy for its residents.</p>
                 </div>
             </div>
             
             <div class="project-gallery">
-                <img src="images/project-03-1.png" alt="Gallery 1">
-                <img src="images/project-03-2.png" alt="Gallery 2">
+                <img src="images/project-03-1.png" alt="Living Area">
+                <img src="images/project-03-2.png" alt="Bedroom View">
+                <img src="images/project-03.png" alt="Concept View">
             </div>
 
-            <a href="index.html#projects" class="back-btn">← BACK TO ALL PROJECTS</a>
+            <div class="room-details">
+                <h2 class="lang" data-th="รายละเอียดพื้นที่" data-en="ROOM DETAILS" style="text-align: center; letter-spacing: 5px; margin-bottom: 50px;">ROOM DETAILS</h2>
+                <div class="room-grid">
+                    <div class="room-card">
+                        <h3 class="lang" data-th="พื้นที่พักผ่อน" data-en="COZY LIVING">COZY LIVING</h3>
+                        <p class="lang" data-th="เน้นการใช้แสงวอร์มไวท์และวัสดุผิวสัมผัสนุ่มนวล สร้างบรรยากาศที่เชื้อเชิญให้มานั่งทิ้งตัวลงนอน" data-en="Focusing on warm white lighting and soft textures, creating an inviting atmosphere to unwind.">Focusing on warm white lighting and soft textures, creating an inviting atmosphere to unwind.</p>
+                    </div>
+                    <div class="room-card">
+                        <h3 class="lang" data-th="มุมทำงานสไตล์มินิมอล" data-en="MINIMAL WORKSPACE">MINIMAL WORKSPACE</h3>
+                        <p class="lang" data-th="จัดสรรพื้นที่ทำงานที่เงียบสงบ เรียบง่าย ลดทอนสิ่งรบกวนเพื่อให้มีสมาธิสูงสุด" data-en="Allocating a quiet, simple workspace, reducing distractions for maximum focus.">Allocating a quiet, simple workspace, reducing distractions for maximum focus.</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="index.html#projects" class="back-btn lang" data-th="← กลับไปที่ผลงานทั้งหมด" data-en="← BACK TO ALL PROJECTS">← BACK TO ALL PROJECTS</a>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 THANAPAT PIMMAKORN. All Rights Reserved.</p>
+    <footer style="text-align: center; padding: 50px 0; border-top: 1px solid var(--border-color); margin-top: 100px;">
+        <p>&copy; 2026 SAAN STUDIO. All Rights Reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,3 +1,27 @@
+// Page Transition Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.querySelector('.page-transition-overlay');
+    
+    // Links to trigger fade out (internal project links or back buttons)
+    const transitionLinks = document.querySelectorAll('a[href$=".html"]');
+    
+    transitionLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            const href = link.getAttribute('href');
+            
+            // Don't transition if it's the same page or just an anchor
+            if (href.startsWith('#') || href === window.location.pathname.split('/').pop()) return;
+            
+            e.preventDefault();
+            overlay.classList.add('fade-out');
+            
+            setTimeout(() => {
+                window.location.href = href;
+            }, 500); // Match CSS transition time
+        });
+    });
+});
+
 // Stats Counter Animation
 const stats = document.querySelectorAll('.stat-number');
 const statsSection = document.getElementById('stats');

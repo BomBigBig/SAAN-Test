@@ -29,19 +29,25 @@
         }
     </style>
 </head>
-<body>
+<body class="fade-in-body">
+    <div class="page-transition-overlay"></div>
     <nav>
         <div class="logo"><a href="index.html"><img src="images/logo.png" alt="SAAN STUDIO" style="height:30px;"></a></div>
         <ul class="nav-links">
-            <li><a href="index.html#projects">Back to Projects</a></li>
+            <li><a href="index.html#projects" class="lang" data-th="กลับไปที่ผลงาน" data-en="Back to Projects">Back to Projects</a></li>
         </ul>
+        <div class="nav-extra">
+            <div class="lang-switch">
+                <span id="btn-th" class="lang-btn">TH</span> | <span id="btn-en" class="lang-btn active">EN</span>
+            </div>
+        </div>
     </nav>
 
     <section class="project-detail-hero">
         <div class="container">
             <div class="project-header">
-                <h1>CONDO PROJECT</h1>
-                <p>Modern Urban Living & Warmth</p>
+                <h1 class="lang" data-th="โครงการคอนโด" data-en="CONDO PROJECT">CONDO PROJECT</h1>
+                <p class="lang" data-th="การใช้ชีวิตเมืองที่ทันสมัยและอบอุ่น" data-en="Modern Urban Living & Warmth">Modern Urban Living & Warmth</p>
             </div>
         </div>
     </section>
@@ -56,8 +62,8 @@
                     <p><strong>TYPE:</strong> Residential High-rise</p>
                 </div>
                 <div class="project-description">
-                    <h2 style="margin-bottom: 20px; letter-spacing: 3px;">CRAFTING SPACES</h2>
-                    <p>โครงการคอนโดมิเนียมที่เน้นการใช้สเปซอย่างคุ้มค่าภายใต้แนวคิด SAAN Studio ที่ผสมผสานความมินิมอลเข้ากับความอบอุ่น เราออกแบบให้ทุกตารางนิ้วคือพื้นที่แห่งการพักผ่อนอย่างแท้จริง โดยใช้แสงธรรมชาติและวัสดุที่มี Texture นุ่มนวลเพื่อสร้างบรรยากาศของ 'บ้าน' แม้อยู่ใจกลางเมือง</p>
+                    <h2 class="lang" data-th="สรรสร้างพื้นที่" data-en="CRAFTING SPACES" style="margin-bottom: 20px; letter-spacing: 3px;">CRAFTING SPACES</h2>
+                    <p class="lang" data-th="โครงการคอนโดมิเนียมที่เน้นการใช้สเปซอย่างคุ้มค่าภายใต้แนวคิด SAAN Studio ที่ผสมผสานความมินิมอลเข้ากับความอบอุ่น เราออกแบบให้ทุกตารางนิ้วคือพื้นที่แห่งการพักผ่อนอย่างแท้จริง โดยใช้แสงธรรมชาติและวัสดุที่มี Texture นุ่มนวลเพื่อสร้างบรรยากาศของ 'บ้าน' แม้อยู่ใจกลางเมือง" data-en="A condominium project focusing on space efficiency under the SAAN Studio concept, blending minimalism with warmth. We design every square inch to be a true relaxation space, using natural light and soft-textured materials to create a 'home' atmosphere even in the heart of the city.">โครงการคอนโดมิเนียมที่เน้นการใช้สเปซอย่างคุ้มค่าภายใต้แนวคิด SAAN Studio ที่ผสมผสานความมินิมอลเข้ากับความอบอุ่น เราออกแบบให้ทุกตารางนิ้วคือพื้นที่แห่งการพักผ่อนอย่างแท้จริง โดยใช้แสงธรรมชาติและวัสดุที่มี Texture นุ่มนวลเพื่อสร้างบรรยากาศของ 'บ้าน' แม้อยู่ใจกลางเมือง</p>
                 </div>
             </div>
             
@@ -72,31 +78,32 @@
             </div>
 
             <div class="room-details">
-                <h2 style="text-align: center; letter-spacing: 5px; margin-bottom: 50px;">ROOM DETAILS</h2>
+                <h2 class="lang" data-th="รายละเอียดห้อง" data-en="ROOM DETAILS" style="text-align: center; letter-spacing: 5px; margin-bottom: 50px;">ROOM DETAILS</h2>
                 <div class="room-grid">
                     <div class="room-card">
-                        <h3>LIVING SPACE</h3>
-                        <p>ห้องนั่งเล่นที่เน้นความโปร่งโล่ง เชื่อมต่อกับระเบียงกว้างเพื่อรับลมและแสงแดด จัดวางเฟอร์นิเจอร์แบบลอยตัวเพื่อให้ปรับเปลี่ยนพื้นที่ได้ตามการใช้งาน</p>
+                        <h3 class="lang" data-th="พื้นที่นั่งเล่น" data-en="LIVING SPACE">LIVING SPACE</h3>
+                        <p class="lang" data-th="ห้องนั่งเล่นที่เน้นความโปร่งโล่ง เชื่อมต่อกับระเบียงกว้างเพื่อรับลมและแสงแดด จัดวางเฟอร์นิเจอร์แบบลอยตัวเพื่อให้ปรับเปลี่ยนพื้นที่ได้ตามการใช้งาน" data-en="A spacious living room connected to a large balcony for wind and light. Loose furniture arrangement allows for flexible space adjustment.">ห้องนั่งเล่นที่เน้นความโปร่งโล่ง เชื่อมต่อกับระเบียงกว้างเพื่อรับลมและแสงแดด จัดวางเฟอร์นิเจอร์แบบลอยตัวเพื่อให้ปรับเปลี่ยนพื้นที่ได้ตามการใช้งาน</p>
                     </div>
                     <div class="room-card">
-                        <h3>MASTER BEDROOM</h3>
-                        <p>พื้นที่ส่วนตัวที่ออกแบบให้เงียบสงบที่สุด ใช้โทนสีสว่างและวัสดุไม้เพื่อสร้างความอบอุ่น พร้อม Walk-in Closet ที่จัดสรรอย่างเป็นสัดส่วน</p>
+                        <h3 class="lang" data-th="ห้องนอนหลัก" data-en="MASTER BEDROOM">MASTER BEDROOM</h3>
+                        <p class="lang" data-th="พื้นที่ส่วนตัวที่ออกแบบให้เงียบสงบที่สุด ใช้โทนสีสว่างและวัสดุไม้เพื่อสร้างความอบอุ่น พร้อม Walk-in Closet ที่จัดสรรอย่างเป็นสัดส่วน" data-en="The quietest private space, designed with light tones and wooden materials for warmth, featuring a well-proportioned walk-in closet.">พื้นที่ส่วนตัวที่ออกแบบให้เงียบสงบที่สุด ใช้โทนสีสว่างและวัสดุไม้เพื่อสร้างความอบอุ่น พร้อม Walk-in Closet ที่จัดสรรอย่างเป็นสัดส่วน</p>
                     </div>
                     <div class="room-card">
-                        <h3>MINIMAL KITCHEN</h3>
-                        <p>ครัวขนาดกะทัดรัดแต่ฟังก์ชันครบครัน เน้นความเรียบง่ายด้วยตู้บิลท์อินซ่อนมือจับ ทำให้พื้นที่ดูสะอาดตาและดูแลรักษาง่าย</p>
+                        <h3 class="lang" data-th="ห้องครัวมินิมอล" data-en="MINIMAL KITCHEN">MINIMAL KITCHEN</h3>
+                        <p class="lang" data-th="ครัวขนาดกะทัดรัดแต่ฟังก์ชันครบครัน เน้นความเรียบง่ายด้วยตู้บิลท์อินซ่อนมือจับ ทำให้พื้นที่ดูสะอาดตาและดูแลรักษาง่าย" data-en="A compact yet fully functional kitchen, emphasizing simplicity with handle-less built-in cabinets for a clean and easy-to-maintain look.">ครัวขนาดกะทัดรัดแต่ฟังก์ชันครบครัน เน้นความเรียบง่ายด้วยตู้บิลท์อินซ่อนมือจับ ทำให้พื้นที่ดูสะอาดตาและดูแลรักษาง่าย</p>
                     </div>
                 </div>
             </div>
 
-            <a href="index.html#projects" class="back-btn">← BACK TO ALL PROJECTS</a>
+            <a href="index.html#projects" class="back-btn lang" data-th="← กลับไปที่ผลงานทั้งหมด" data-en="← BACK TO ALL PROJECTS">← BACK TO ALL PROJECTS</a>
         </div>
     </section>
 
     <footer style="text-align: center; padding: 50px 0; border-top: 1px solid var(--border-color); margin-top: 100px;">
-        <p>&copy; 2026 THANAPAT PIMMAKORN. All Rights Reserved.</p>
+        <p>&copy; 2026 SAAN STUDIO. All Rights Reserved.</p>
     </footer>
 
+    <script src="script.js"></script>
     <script>
         // Theme application for detail page
         const currentTheme = localStorage.getItem('theme');
