@@ -198,17 +198,18 @@ input:checked + .slider:before { transform: translateX(16px); }
     max-width: 200px;
     height: auto;
     display: block;
-    background: transparent !important;
+    background: none !important;
     border: none !important;
-    /* Light Mode: Remove white background */
-    mix-blend-mode: multiply; 
+    box-shadow: none !important;
+    outline: none !important;
+    filter: none; /* Reset all filters */
     transition: var(--transition-smooth);
 }
 
-/* Dark Mode Fix: Invert and remove the resulting black background */
+/* Specific fix for Dark Mode: Only invert color, no other effects */
 [data-theme="dark"] #hero-branding-logo {
     filter: invert(1);
-    mix-blend-mode: screen; 
+    mix-blend-mode: normal;
 }
 
 .hero-content h1 {
