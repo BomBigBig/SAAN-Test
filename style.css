@@ -81,13 +81,88 @@ nav {
     transition: var(--transition-smooth);
 }
 
+/* Navigation Branding - ENLARGED */
 .logo img {
-    height: 24px;
+    height: 45px; /* Increased for better visibility */
     width: auto;
-    transition: filter 0.3s ease;
+    transition: var(--transition-smooth);
 }
 
 [data-theme="dark"] .logo img { filter: invert(1); }
+
+/* Concept Branding Image */
+.concept-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    opacity: 0.8;
+}
+.concept-logo {
+    height: 100px;
+    width: auto;
+    filter: grayscale(100%);
+    transition: var(--transition-smooth);
+}
+.concept-logo:hover { opacity: 1; transform: scale(1.05); }
+[data-theme="dark"] .concept-logo { filter: invert(1) grayscale(100%); }
+
+/* Project Filter Buttons - MINIMALIST REDESIGN */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    padding: 8px 22px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    transition: var(--transition-smooth);
+}
+
+.filter-btn.active {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border-color: var(--text-color);
+}
+
+.filter-btn:hover:not(.active) {
+    border-color: var(--text-color);
+}
+
+/* Scroll Top Button - MINIMALIST REDESIGN */
+#scrollTop {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: 1px solid var(--text-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    transition: var(--transition-smooth);
+    width: 44px;
+    height: 44px;
+    line-height: 22px;
+    text-align: center;
+}
+
+#scrollTop:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    transform: translateY(-5px);
+}
 
 .nav-links {
     display: none; /* Hidden on mobile by default */
