@@ -162,14 +162,20 @@ input:checked + .slider:before { transform: translateX(16px); }
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
+    background: transparent !important; /* Ensure no background */
 }
-.concept-logo {
-    max-width: 180px; /* Balanced size */
+
+#hero-branding-logo {
+    max-width: 200px;
     height: auto;
-    filter: none; /* Keep original PNG transparency/colors */
+    display: block;
+    filter: none; /* Default for Light Mode (Black logo) */
     transition: var(--transition-smooth);
 }
-.concept-logo:hover { transform: scale(1.05); }
+
+[data-theme="dark"] #hero-branding-logo {
+    filter: invert(1); /* Invert black to white in Dark Mode */
+}
 
 .hero-content h1 {
     font-size: 2.2rem;
