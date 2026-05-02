@@ -140,7 +140,7 @@ const navSlide = () => {
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
 
-    burger.addEventListener('click', () => {
+    const toggleMenu = () => {
         // Toggle Nav
         nav.classList.toggle('nav-active');
 
@@ -155,6 +155,17 @@ const navSlide = () => {
 
         // Burger Animation
         burger.classList.toggle('toggle');
+    };
+
+    burger.addEventListener('click', toggleMenu);
+
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (nav.classList.contains('nav-active')) {
+                toggleMenu();
+            }
+        });
     });
 }
 

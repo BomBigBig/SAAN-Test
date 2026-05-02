@@ -147,10 +147,11 @@ nav {
 input:checked + .slider { background-color: #444; }
 input:checked + .slider:before { transform: translateX(16px); }
 
-/* Burger Icon */
+/* Burger Icon & Animation */
 .burger {
     display: block;
     cursor: pointer;
+    z-index: 1001; /* Above mobile menu */
 }
 
 .burger div {
@@ -159,6 +160,16 @@ input:checked + .slider:before { transform: translateX(16px); }
     background-color: var(--text-color);
     margin: 4px;
     transition: var(--transition-smooth);
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-4px, 4px);
+}
+.toggle .line2 {
+    opacity: 0;
+}
+.toggle .line3 {
+    transform: rotate(45deg) translate(-4px, -4px);
 }
 
 /* Hero Section - Mobile First */
