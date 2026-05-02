@@ -198,12 +198,15 @@ input:checked + .slider:before { transform: translateX(16px); }
     max-width: 200px;
     height: auto;
     display: block;
-    filter: none; /* Default for Light Mode (Black logo) */
+    background: transparent !important;
+    mix-blend-mode: multiply; /* Helps blend if there's a faint white fringe, but best for white bg removal */
     transition: var(--transition-smooth);
 }
 
+/* For Dark Mode, we don't want multiply on a white logo, so reset it */
 [data-theme="dark"] #hero-branding-logo {
-    filter: invert(1); /* Invert black to white in Dark Mode */
+    filter: invert(1);
+    mix-blend-mode: normal;
 }
 
 .hero-content h1 {
