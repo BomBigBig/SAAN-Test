@@ -15,9 +15,61 @@ const initHeroSlideshow = () => {
     setInterval(nextSlide, slideInterval);
 };
 
+// Lightbox Functionality
+const initLightbox = () => {
+    const galleryImages = document.querySelectorAll('.project-gallery img');
+    if (galleryImages.length === 0) return;
+
+    // Create and inject Lightbox HTML if it doesn't exist
+    if (!document.getElementById('lightbox')) {
+        const lightboxHTML = `
+            <div id="lightbox" class="lightbox-modal">
+                <span class="lightbox-close">&times;</span>
+                <img class="lightbox-content" id="lightbox-img">
+                <div class="lightbox-caption" id="lightbox-caption"></div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', lightboxHTML);
+    }
+
+    const modal = document.getElementById('lightbox');
+    const modalImg = document.getElementById('lightbox-img');
+    const captionText = document.getElementById('lightbox-caption');
+    const closeBtn = document.querySelector('.lightbox-close');
+
+    galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+            modal.classList.add('active');
+            modalImg.src = img.src;
+            captionText.innerText = img.alt || '';
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        });
+    });
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target === modalImg) {
+            closeModal();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+};
+
 // Page Transition Logic
 document.addEventListener('DOMContentLoaded', () => {
     initHeroSlideshow();
+    initLightbox();
     const overlay = document.querySelector('.page-transition-overlay');
     
     // Links to trigger fade out (internal project links or back buttons)
