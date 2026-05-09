@@ -85,6 +85,41 @@ nav {
 .nav-links { display: none; }
 .nav-extra { display: flex; align-items: center; gap: 20px; }
 
+/* Language Switcher */
+.lang-switch {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--secondary-text);
+}
+
+.lang-btn {
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    padding: 2px 5px;
+    display: inline-block;
+}
+
+.lang-btn:hover {
+    color: var(--text-color);
+}
+
+.lang-btn.active {
+    color: var(--text-color);
+    font-weight: 700;
+    position: relative;
+}
+
+.lang-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 5px;
+    right: 5px;
+    height: 1.5px;
+    background-color: var(--text-color);
+}
+
 /* Theme Switch UI */
 .theme-switch { position: relative; display: inline-block; width: 34px; height: 18px; }
 .theme-switch input { display: none; }
